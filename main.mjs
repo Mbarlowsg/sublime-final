@@ -28,7 +28,7 @@ function checkImage(image, button) {
 }
 
 function chooseImage() {
-    chosenImage = imageList[Math.floor(Math.random() * 3)];    
+    chosenImage = imageList[Math.floor(Math.random() * imageList.length)];    
     imageDisplay.innerHTML = `
         <img src="${chosenImage.path}"/>
         `
