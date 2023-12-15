@@ -1,7 +1,11 @@
 import {imageList} from "./modules/imageList.mjs";
-console.log("test")
+
+// DOM Elements
+const result = document.getElementById("result");
 const imageDisplay = document.getElementById('image_display'); // div to contain image
 const submitButtons = document.getElementsByClassName('submit_button');
+
+// Script variables
 let chosenImage = {};
 
 window.onload = () => {
@@ -19,11 +23,10 @@ window.onload = () => {
 
 
 function checkImage(image, button) {
-    if (image.source === 'real'){
-        button.value === "real" ? console.log("correct") : console.log("wrong");
-    } else if (image.source === 'AI'){ 
-        button.value === "fake" ? console.log("correct") : console.log("wrong");
-
+    if (image.source === "real"){
+        button.value === "real" ? result.innerText = "Result: Correct": result.innerText = "Result: Wrong";
+    } else if (image.source === "AI"){ 
+        button.value === "fake" ? result.innerText = "Result: Correct": result.innerText = "Result: Wrong";   
     }
 }
 
